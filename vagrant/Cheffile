@@ -1,0 +1,15 @@
+# encoding: utf-8
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook "apt"
+cookbook "postgresql"
+cookbook "ruby_build"
+cookbook 'rbenv', git: 'https://github.com/aminin/chef-rbenv'
+cookbook "git"
+cookbook "tmux"
+cookbook "nginx"
+cookbook "vim"
+cookbook "redis", {:github=>"ctrabold/chef-redis"}
+cookbook "nodejs"
+cookbook 'locale', '~> 1.0.2'
