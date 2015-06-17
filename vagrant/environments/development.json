@@ -9,30 +9,6 @@
   "override_attributes": {
     "app": {
       "enable_nginx": true
-    },
-    "rvm": {
-      "default_ruby": "2.1.5",
-      "gpg" : {},
-      "vagrant": {
-          "system_chef_client": "/opt/chef/bin/chef-client",
-          "system_chef_solo": "/opt/chef/bin/chef-solo"
-      },
-      "user_installs": [
-        {
-          "install_rubies": true,
-          "default_ruby": "2.1.5",
-          "rubies": ["2.1.5"],
-          "user": "vagrant"
-        }
-      ],
-      "user_global_gems": [
-        {
-          "name": "bundler"
-        },
-        {
-          "name": "rake"
-        }
-      ]
     }
   }
 }
