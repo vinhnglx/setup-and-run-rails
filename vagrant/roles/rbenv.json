@@ -1,0 +1,35 @@
+{
+  "name": "rbenv",
+  "description": "Install rbenv and ruby",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+    "rbenv": {
+      "rubies": [
+        "2.1.5"
+      ],
+      "global": "2.1.5",
+      "gems": {
+        "2.1.5": [
+          { "name": "bundler"}
+        ]
+      }
+    }
+  },
+  "override_attributes": {
+  },
+  "env_run_lists": {
+    "development": [
+      "recipe[ruby_build]",
+      "recipe[rbenv::system]"
+    ],
+    "staging": [
+      "recipe[ruby_build]",
+      "recipe[rbenv::system]"
+    ],
+    "production": [
+      "recipe[ruby_build]",
+      "recipe[rbenv::system]"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "nodejs",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Install NodeJs and NPM",
+  "default_attributes": {
+  },
+  "env_run_lists": {
+    "development": [
+      "recipe[nodejs]"
+    ],
+    "staging": [
+      "recipe[nodejs]"
+    ],
+    "production": [
+      "recipe[nodejs]"
+    ]
+  }
+}

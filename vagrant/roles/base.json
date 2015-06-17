@@ -1,0 +1,36 @@
+{
+  "name": "base",
+  "description": "Install base environment",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "env_run_lists": {
+    "development": [
+      "recipe[git]",
+      "recipe[apt]",
+      "recipe[locale]",
+      "recipe[tmux]",
+      "recipe[nginx]",
+      "recipe[vim]"
+    ],
+    "staging": [
+      "recipe[git]",
+      "recipe[apt]",
+      "recipe[locale]",
+      "recipe[tmux]",
+      "recipe[nginx]",
+      "recipe[vim]"
+    ],
+    "production": [
+      "recipe[git]",
+      "recipe[apt]",
+      "recipe[locale]",
+      "recipe[tmux]",
+      "recipe[nginx]",
+      "recipe[vim]"
+    ]
+  }
+}

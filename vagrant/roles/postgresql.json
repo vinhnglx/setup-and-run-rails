@@ -1,0 +1,33 @@
+{
+  "name": "postgresql",
+  "description": "Install postgresql database",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "postgresql": {
+      "version": "9.3",
+      "enable_pgdg_apt": "true",
+      "password": {
+        "postgres": "password"
+      },
+      "pg_hba": [
+        { "type": "local", "db": "postgres", "user": "postgres", "method": "trust" },
+        { "type": "host", "db": "all", "user": "all", "addr": "0.0.0.0/0", "method": "md5" },
+        { "type": "host", "db": "all", "user": "all", "addr": "::1/0", "method": "md5" },
+        { "type": "local", "db": "all", "user": "all", "method": "md5" }
+      ]
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "env_run_lists": {
+    "development": [
+      "recipe[postgresql::client]",
+      "recipe[postgresql::server]"
+    ],
+    "staging": [
+      "recipe[postgresql::client]",
+      "recipe[postgresql::server]"
+    ]
+  }
+}
