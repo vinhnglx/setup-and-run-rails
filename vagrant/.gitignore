@@ -1,3 +1,5 @@
 tmp/
 .vagrant/
 machines/
+/cookbooks/
+/tmp/librarian/
