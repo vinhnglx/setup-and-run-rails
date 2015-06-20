@@ -1,0 +1,13 @@
+{
+  "run_list": [
+    "role[base]",
+    "role[nodejs]",
+    "role[redis]",
+    "role[postgresql]",
+    "role[rbenv]"
+  ],
+  "environment": "staging",
+  "automatic": {
+    "ipaddress": "12.34.567.89"
+  }
+}
