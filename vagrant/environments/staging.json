@@ -1,0 +1,29 @@
+{
+  "name": "staging",
+  "description": "Install environment for staging",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "app": {
+      "path": "/home/root/hello",
+      "db": {
+        "name": "hello_staging"
+      },
+      "enable_nginx": true
+    },
+    "rbenv": {
+      "rubies": [
+        "2.1.5"
+      ],
+      "global": "2.1.5",
+      "gems": {
+        "2.1.5": [
+          { "name": "bundler" },
+          { "name": "rake" }
+        ]
+      }
+    }
+  }
+}
