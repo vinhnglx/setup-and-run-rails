@@ -2,6 +2,7 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
+require 'mina/unicorn'
 
 set :domain, '12.34.567.89'
 set :deploy_to, '/home/root/hello'
@@ -13,6 +14,7 @@ set :user, 'root'
 set :identity_file, '/path/to/ssh/key'
 set :rails_env, :staging
 set :rbenv_path, '/usr/local/rbenv'
+set :unicorn_pid, '/tmp/pids/unicorn.pid'
 
 set :shared_paths, ['config/database.yml', 'log', 'config/secrets.yml']
 
@@ -49,6 +51,7 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
+      invoke :'unicorn:restart'
     end
   end
 end
